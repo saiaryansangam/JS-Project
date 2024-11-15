@@ -1,0 +1,57 @@
+.img1{
+    border-radius: 50%;
+    width: 150px;
+    height:100px ;
+}
+.img2{
+    border-radius: 60%;
+    width:140px;
+    height: 100px;
+}
+.cast{
+    display: flex;
+    gap:20px;
+    border: 5px solid black;
+    
+}
+#demo{
+    margin-top: 100px;
+    margin-right: 100px;
+}
+hr{
+    color: red;
+    
+}
+p{
+    color: blue;
+    font-size: 25px;
+}
+body{
+    background-color:h=honeydew;
+}
+h1{
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200px;
+    color:darkslateblue;
+}
+.stars{
+    color: gold;
+    
+}
+.review{
+    border: 3px solid black;
+}
+h3{
+    text-align: center;
+    font-size: 40px;
+    color: black;
+    font-weight: 300px;
+}
+div{
+    font-size: 27px;
+}
+.nani{
+    width: 200px;
+   
+}

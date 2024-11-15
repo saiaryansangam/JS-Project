@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Website</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .sale-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 80%;
+            max-width: 1000px;
+            margin: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .sale-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .sale-image {
+            background-image: url('https://images.pexels.com/photos/7563650/pexels-photo-7563650.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-position: center;
+        }
+        .countdown-message {
+            font-size: 2.5em;
+            margin: 0.5em 0;
+            font-weight: bold;
+            color: #ffdd57;
+        }
+        .discount {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .timer-box {
+            text-align: center;
+        }
+        .timer-value {
+            background-color: #ffdd57;
+            color: black;
+            font-size: 2em;
+            font-weight: bold;
+            padding: 15px 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+        .timer-value:hover {
+            background-color: #f0e68c;
+        }
+        .timer-label {
+            font-size: 0.9em;
+            margin-top: 5px;
+            color: #ffdd57;
+        }
+        .btn {
+            font-size: 1.5em;
+            background-color: cadetblue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: bisque;
+            color: black;
+        }
+        @media (max-width: 768px) {
+            .sale-container {
+                grid-template-columns: 1fr;
+            }
+            .sale-image {
+                display: none;
+            }
+            .btn {
+                width: 100%;
+            }
+            .countdown-message {
+                font-size: 1.8em;
+            }
+            .discount {
+                font-size: 1em;
+            }
+            .timer-value {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sale-container">
+        <div class="sale-info">
+            <h2 class="countdown-message">Hurry up! Subscribe to watch MOVIES</h2>
+            <p class="discount">
+                GET 40% discount on your first subscription<br><br>
+                <strong>Basic Plan:</strong><br>
+                Enjoy access to a curated selection of movies and trailers.<br>
+                Price: $5.99/month<br><br>
+                <strong>Premium Plan:</strong><br>
+                Unlock everything with our full movie library, ad-free experience, and exclusive content.<br>
+                Price: $9.99/month
+            </p>
+            <div class="countdown-timer">
+                <div class="timer-box">
+                    <div class="timer-value" id="days">00</div>
+                    <div class="timer-label">Days</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-value" id="hours">00</div>
+                    <div class="timer-label">Hours</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-value" id="minutes">00</div>
+                    <div class="timer-label">Minutes</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-value" id="seconds">00</div>
+                    <div class="timer-label">Seconds</div>
+                </div>
+            </div>
+            <a href="Login.html"><button class="btn">Subscribe Now</button></a>
+        </div>
+        <div class="sale-image"></div>
+    </div>
+
+    <script>
+        const futureDate = new Date('2024-11-05T23:33:00');
+
+        function formatDate(value) {
+            return value < 10 ? `0${value}` : value;
+        }
+
+        function updateSale() {
+            const now = new Date().getTime();
+            const timeLeft = futureDate - now;
+
+            if (timeLeft < 0) {
+                clearInterval(countdown);
+                document.querySelector('.countdown-message').textContent = 'Sorry, the sale has ended';
+                document.querySelectorAll('.timer-value').forEach(el => el.textContent = '00');
+                return;
+            }
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = formatDate(days);
+            document.getElementById('hours').textContent = formatDate(hours);
+            document.getElementById('minutes').textContent = formatDate(minutes);
+            document.getElementById('seconds').textContent = formatDate(seconds);
+        }
+
+        const countdown = setInterval(updateSale, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+.sale-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr ;
+    gap:3rem;
+    margin: 40px;
+    background-image:url('https://images.pexels.com/photos/7563650/pexels-photo-7563650.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 700px;
+    
+}
+.sale-info{
+    text-align: center;
+
+}
+.countdown-sale{
+    font-size: 50px;
+    color: black;
+}
+.countdown-message{
+    font-size: 40px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.countdown-timer{
+    display:flex;
+    padding: 70px;
+    gap:10px;
+    margin-top:70px;
+}
+.timer{
+    background-color:blanchedalmond;
+    color: black;
+    font-size: 60px;
+    font-style: oblique;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    width: 200px;
+
+}
+ span{
+    color: whitesmoke;
+    width: 300px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+
+}
+.btn{
+    font-size: 30px;
+    background-color:cadetblue;
+   
+
+   margin-left: 500px;
+    
+}
+.btn:hover{
+    background-color: bisque;
+}
+#hello{
+    font-size: 30px;
+}
+body{
+    background-color: black;
+}
+.discount{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 28px;
+    
+    
+}

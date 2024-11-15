@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://images.pexels.com/photos/7234383/pexels-photo-7234383.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            border: 3px solid whitesmoke;
+            border-radius: 30px;
+            width: 90%;
+            max-width: 500px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+            position: relative;
+            height: 500px; /* Set a fixed height for both forms to fit */
+        }
+
+        .error {
+            color: red;
+            font-size: 16px;
+        }
+
+        h3 {
+            color: lightseagreen;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: lightseagreen;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border-radius: 30px;
+            border: 1px solid lightseagreen;
+            background-color: transparent;
+            color: white;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            font-size: 20px;
+            background-color: cadetblue;
+            border: none;
+            border-radius: 30px;
+            padding: 10px;
+            cursor: pointer;
+            width: 50%;
+            margin: 10px auto;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #5c8a8c;
+        }
+
+        .toggle-btn {
+            font-size: 16px;
+            color: lightseagreen;
+            text-align: center;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .form-wrapper {
+            display: flex;
+            width: 200%; /* 2 forms side by side */
+            transition: transform 0.6s ease;
+        }
+
+        .form-container {
+            width: 50%; /* Each form takes half of the form-wrapper */
+            padding: 20px;
+        }
+
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Slide animation */
+        .show-signup .form-wrapper {
+            transform: translateX(-50%); /* Slide to show the signup form */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-wrapper">
+            <!-- Login Form -->
+            <div class="form-container login-form">
+                <h3>LOGIN</h3>
+                <form onsubmit="return onSubmit()">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your Name" />
+                    <span id="nameErr" class="error"></span>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your Email" />
+                    <span id="emailErr" class="error"></span>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your Password" />
+                    <span id="passwordErr" class="error"></span>
+
+                    <input type="submit" class="btn" value="Login">
+                    <div class="toggle-btn" onclick="toggleForm()">Don't have an account? Sign Up</div>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="form-container signup-form">
+                <h3>SIGN UP</h3>
+                <form onsubmit="return onSignupSubmit()">
+                    <label for="signupName">Name:</label>
+                    <input type="text" id="signupName" name="signupName" placeholder="Enter your Name" />
+                    <span id="signupNameErr" class="error"></span>
+
+                    <label for="signupEmail">Email:</label>
+                    <input type="email" id="signupEmail" name="signupEmail" placeholder="Enter your Email" />
+                    <span id="signupEmailErr" class="error"></span>
+
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" id="signupPassword" name="signupPassword" placeholder="Enter your Password" />
+                    <span id="signupPasswordErr" class="error"></span>
+
+                    <input type="submit" class="btn" value="Sign Up">
+                    <div class="toggle-btn" onclick="toggleForm()">Already have an account? Log In</div>
+                </form>
+            </div>
+        </div>
+    </div>
+   <script>
+   function toggleForm() {
+    document.querySelector('.container').classList.toggle('show-signup');
+}
+
+
+    function validateEmail(email) {
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailPattern.test(email);
+    }
+
+    function clearErrors() {
+        document.querySelectorAll('.error').forEach(error => error.innerText = "");
+    }
+
+    function onSubmit() {
+        clearErrors();
+        let isValid = true;
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+
+        if (name === "") {
+            document.getElementById('nameErr').innerText = "Name is required.";
+            isValid = false;
+        }
+
+        if (email === "") {
+            document.getElementById('emailErr').innerText = "Email is required.";
+            isValid = false;
+        } else if (!validateEmail(email)) {
+            document.getElementById('emailErr').innerText = "Please enter a valid email address.";
+            isValid = false;
+        }
+
+        if (password === "") {
+            document.getElementById('passwordErr').innerText = "Password is required.";
+            isValid = false;
+        } else if (password.length < 6) {
+            document.getElementById('passwordErr').innerText = "Password must be at least 6 characters long.";
+            isValid = false;
+        }
+
+        if (isValid) {
+            const storedUser = JSON.parse(localStorage.getItem(email));
+            if (storedUser && storedUser.name === name && storedUser.password === password) {
+                alert("Login successful!");
+                return true;
+            } else {
+                document.getElementById('passwordErr').innerText = "Incorrect email, name, or password.";
+                return false;
+            }
+        }
+        return false;
+    }
+
+    function onSignupSubmit() {
+        clearErrors();
+        let isValid = true;
+
+        const signupName = document.getElementById('signupName').value.trim();
+        const signupEmail = document.getElementById('signupEmail').value.trim();
+        const signupPassword = document.getElementById('signupPassword').value.trim();
+
+        if (signupName === "") {
+            document.getElementById('signupNameErr').innerText = "Name is required.";
+            isValid = false;
+        }
+
+        if (signupEmail === "") {
+            document.getElementById('signupEmailErr').innerText = "Email is required.";
+            isValid = false;
+        } else if (!validateEmail(signupEmail)) {
+            document.getElementById('signupEmailErr').innerText = "Please enter a valid email address.";
+            isValid = false;
+        }
+
+        if (signupPassword === "") {
+            document.getElementById('signupPasswordErr').innerText = "Password is required.";
+            isValid = false;
+        } else if (signupPassword.length < 6) {
+            document.getElementById('signupPasswordErr').innerText = "Password must be at least 6 characters long.";
+            isValid = false;
+        }
+
+        if (isValid) {
+            const user = { name: signupName, email: signupEmail, password: signupPassword };
+            localStorage.setItem(signupEmail, JSON.stringify(user));
+            alert("Signup successful! Please log in.");
+            toggleForm(); // Switch to login form after signup
+            return false;
+        }
+        return false;
+    }
+</script>
+</body>
+</html>

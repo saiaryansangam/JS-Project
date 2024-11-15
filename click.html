@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+   
+    </svg>
+    <link rel="stylesheet" href="click.css">
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Cinema</h1>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#movies">Movies</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Enter movie title">
+                <button id="search-button">Search</button>
+            </div>
+        </div>
+    </header>
+    
+    <h2>LATEST MOVIES TRENDING </h2>
+
+    <div class="slideshow-container">
+
+        <img class="slide" src="https://assets-in.bmscdn.com/discovery-catalog/events/et00092396-ntrrqrcfze-landscape.jpg" alt="Image 3">
+        <img class="slide" src="https://images.alphacoders.com/941/thumb-1920-941635.jpg" alt="Image 1">
+        <div class="slide-text">
+            "UNFOLD THE MAGIC OF MOVIES"
+          </div>
+        <img class="slide" src="https://c4.wallpaperflare.com/wallpaper/243/119/616/bollywood-celebrities-male-celebrities-wallpaper-preview.jpg" alt="Image 2">
+
+        
+       
+        <a class="prev" onclick="changeSlide(-1)"></a>
+        <a class="next" onclick="changeSlide(1)"></a>
+    </div>
+
+   
+
+    <br><br>
+    <h2>NOW SHOWING</h2>
+
+    <div class="container my-3">
+        <div class="row">
+            <!-- Movie Card 1 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://pbs.twimg.com/profile_images/1812787806948749312/TwRA-xYf_400x400.jpg"
+                        class="card-img-top" alt="Movie Poster 1">
+                    <div class="card-body">
+                        <h5 class="card-title">KALKI 2898AD</h5>
+                        <span class="favorite-icon" data-favorite="false">&#9825;</span>
+                        <p class="card-text">SCIFI,ACTION.</p>
+
+                        <p class="card-text">9.1/10</p>
+                        <a href="subcribe.html"><button class="btn btn-primary">Subscribe</button></a><br><br>
+                        <a href="https://www.youtube.com/watch?v=y1-w1kUGuz8" target="_self"
+                            class="watch-button">Watchtrailer</a><br><br>
+                        <a href="info.html" class="btn btn-primary">More Info</a><br><br>
+                        
+                        <button id="quoteBtn"> Movie Theme</button>
+                        <p id="randomQuote"></p>
+                    
+                      
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie Card 2 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/saripodhaa-sanivaaram-et00388631-1724078891.jpg"
+                        class="card-img-top" alt="Movie Poster 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Sariphodaa sanivaaram</h5>
+                        <span class="favorite-icon" data-favorite="false">&#9825;</span>
+                        <p class="card-text">Action,drama. T.</p>
+                        <p class="card-text">8.8/10</p>
+                        <a href="subcribe.html"><button type="button" class="btn btn-primary">Subscribe</button></a><br><br>
+                        <a href="https://www.youtube.com/watch?v=0_f1LzYjFI4" target="_self"
+                            class="watch-button">Watchtrailer</a><br><br>
+                        <a href="info2.html" class="btn btn-primary">More Info</a><br><br>
+                        <button id="quoteBtn1"> Movie Theme</button>
+                        <p id="randomQuote1"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Movie Card 3 -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://miro.medium.com/v2/resize:fit:902/1*zQIqbb61gj4xp925tf4N9w.jpeg"
+                        class="card-img-top" alt="Movie Poster 3">
+                    <div class="card-body">
+                        <h5 class="card-title">MAHARAJA</h5>
+                        <span class="favorite-icon" data-favorite="false">&#9825;</span>
+                        <p class="card-text">ACTION,DRAMA.</p>
+
+                        <p class="card-text">9.0/10</p>
+                        <button type="button" class="btn btn-primary">Subscribe</button><br><br>
+                        <a href="https://www.youtube.com/watch?v=0_f1LzYjFI4" target="_self"
+                            class="watch-button">Watchtrailer</a><br><br>
+                        <a href="#" class="btn btn-primary">More Info</a><br><br>
+                        <button id="quoteBtn3"> Movie Theme</button>
+                        <p id="randomQuote3"></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+           
+
+
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+    <br><br>
+    <h2>COMING SOON MOVIES </h2><br><br>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/M/MV5BYzM2MGQ0N2EtNmQ3YS00NzNkLTkxOGItYWY3N2MzYWQ1MjAyXkEyXkFqcGc@._V1_.jpg"
+                    class="card-img-top" alt="Movie Poster 1">
+                <div class="card-body">
+                    <h5 class="card-title">PUSHPA 2</h5>
+                    <p class="card-text">ACTION.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://d3lzcn6mbbadaf.cloudfront.net/media/details/ANI-20240729122354.jpg"
+                    class="card-img-top" alt="Movie Poster 1">
+                <div class="card-body">
+                    <h5 class="card-title">RAJASAAB</h5>
+                    <p class="card-text">ACTION,HORROR.</p>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://static.moviecrow.com/marquee/game-changer-ram-charan-shankar-film-gears-up-for-second-single-release/234181_thumb_665.jpg"
+                    class="card-img-top" alt="Movie Poster 1">
+                <div class="card-body">
+                    <h5 class="card-title">GAME CHANGER</h5>
+                    <p class="card-text">ACTION.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/M/MV5BODgyMDE4NTgtY2E3ZS00M2E5LWFmOWYtZDE2MTVhNTZhNWI4XkEyXkFqcGc@._V1_.jpg"
+                    class="card-img-top" alt="Movie Poster 1">
+                <div class="card-body">
+                    <h5 class="card-title">VISHVAMBHARA</h5>
+                    <p class="card-text">SCIFI,ACTION.</p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br><br>
+
+    <h2> STAND-UP COMEDIES</h2><br>
+    <p id="hi">Stand-up comedy has long been one of the most loved forms of entertainment. From small clubs to massive
+        arenas, comedians take the stage armed with nothing but a microphone and their wit. With humor that often
+        highlights the quirks of everyday life, stand-up comedians bring relatable, thought-provoking, and
+        laugh-out-loud experiences to audiences around the world.
+
+        This art form is unique because it thrives on a direct connection with the audience. Comedians use observational
+        humor, personal anecdotes, satire, and improvisation to spark laughter. The ability to turn real-life situations
+        into funny and often exaggerated stories makes stand-up an engaging and spontaneous form of storytelling.
+
+    </p>
+
+
+    <div class="row" >
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq78ZhknRGfuCgHlseTtT-cQIp_FMEmCgCBg&s"
+                    class="card-img-top" alt="Movie Poster 1">
+                <div class="card-body">
+                    <h5 class="card-title">ZAKIR KHAN</h5>
+
+                    <button class="btn">book now</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://yt3.googleusercontent.com/ytc/AIdro_n1pxm3eQrHAsQwnJDBJu8-FEFnWUrmffTqMEfIM4y6yA=s900-c-k-c0x00ffffff-no-rj"
+                    class="card-img-top" alt="Movie Poster 1">
+                <div class="card-body">
+                    <h5 class="card-title">VIPUL GOYAL</h5>
+
+                    <button class="btn">book now</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="1267828.jpg"
+                    class="card-img-top" alt="Movie Poster 1">
+                <div class="card-body">
+                    <h5 class="card-title">ADITHI MITTAL</h5>
+
+                    <button class="btn">book now</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="https://yt3.googleusercontent.com/XVVi44_WFTkdPXYorOffTEJ51xPacaBdx_-peDEao52ZHF8DdfuJz76IZLQI3hNwulwnHrBHIQ=s900-c-k-c0x00ffffff-no-rj"
+                    class="card-img-top" alt="Movie Poster 1">
+                <div class="card-body">
+                    <h5 class="card-title">kapil sharma show</h5>
+
+                    <button class="btn">book now</button>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+    <button id="backToTopBtn">Back to Top</button>
+
+
+   
+
+
+
+
+</body>
+<script>
+    let slideIndex = 0;
+    showSlides(slideIndex);
+
+    // Function to change slide
+    function changeSlide(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Function to display the slides
+    function showSlides(n) {
+        let slides = document.getElementsByClassName("slide");
+        if (n >= slides.length) { //slide first
+            slideIndex = 0;
+        }
+        if (n < 0) {
+            slideIndex = slides.length - 1;
+        }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex].style.display = "block";
+    }
+
+    // Auto slide every 3 seconds direction of slides
+    setInterval(function () {
+        changeSlide(1);
+    }, 1000);
+
+
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+// Show button when user scrolls down
+window.onscroll = () => {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+};
+
+// Scroll back to top when button is clicked
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior:"smooth" });
+    
+});
+
+
+
+document.querySelectorAll('.favorite-icon').forEach(icon => {
+    icon.addEventListener('click', () => {
+        const isFavorite = icon.dataset.favorite === "true";
+        icon.innerHTML = isFavorite ? "&#9825;" : "&#9829;"; // Toggle between empty and filled heart
+        icon.dataset.favorite = !isFavorite; // Toggle data attribute
+    });
+});
+
+
+ //  <button id="quoteBtn"> Movie Theme</button>
+ //<p id="randomQuote"></p>
+const quotes = [
+    
+    
+    " Whether a god or a cruel being, no one can escape their Karma.-KRISHNA"
+   
+];
+
+const quoteBtn = document.getElementById("quoteBtn");
+const randomQuote = document.getElementById("randomQuote");
+
+quoteBtn.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    randomQuote.textContent = quotes[randomIndex];
+});
+
+
+const quotes1 = [
+    
+    
+    " When anger rises, think of the consequences."
+];
+
+const quoteBtn1 = document.getElementById("quoteBtn1");
+const randomQuote1 = document.getElementById("randomQuote1");
+
+quoteBtn1.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * quotes1.length);
+    randomQuote1.textContent = quotes1[randomIndex];
+});
+
+
+const quotes2 = [
+    
+    
+    " Injustice anywhere is a threat to justice everywhere:"
+];
+
+const quoteBtn2 = document.getElementById("quoteBtn3");
+const randomQuote2 = document.getElementById("randomQuote3");
+
+quoteBtn2.addEventListener('click', () => {
+    const randomIndex = Math.floor(Math.random() * quotes2.length);
+    randomQuote2.textContent = quotes2[randomIndex];
+});
+
+
+
+document.getElementById('search-button').addEventListener('click', function() {
+            const searchQuery = document.getElementById('search-input').value;
+            if (searchQuery) {
+                window.location.href = `Overview.html?query=${encodeURIComponent(searchQuery)}`;
+            } else {
+                alert('Please enter a search term.');
+            }
+        });
+
+
+
+
+    
+
+</script>
+
+</html>
